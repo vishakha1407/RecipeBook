@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <header class="navbar">
+            <h1>Recipe Book</h1>
+            <nav>
+                <ul>
+                    <li><a href="#recipesContainer">Recipes</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#recipeForm">Add Recipe</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search recipes by name or ingredient..." aria-label="Search">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Add Recipe Section -->
+            <section id="addRecipe" class="add-recipe">
+                <h2>Add a New Recipe</h2>
+                <form id="recipeForm">
+                    <div class="form-group">
+                        <label for="recipeName">Recipe Name:</label>
+                        <input type="text" id="recipeName" placeholder="e.g., Chocolate Cake" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients (comma-separated):</label>
+                        <textarea id="ingredients" rows="3" placeholder="e.g., sugar, flour, eggs" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="steps">Preparation Steps:</label>
+                        <textarea id="steps" rows="5" placeholder="e.g., Preheat oven to 180°C..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUpload">Upload Image:</label>
+                        <input type="file" id="imageUpload" accept="image/*">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Add Recipe</button>
+                        <button type="reset" class="btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Recipe List Section -->
+            <section id="recipesContainer" class="recipe-list">
+                <h2>Recipes</h2>
+                <div class="recipe-grid">
+                    <!-- Recipes will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="favorites-list">
+                <h2>Favorites</h2>
+                <div id="favoritesContainer">
+                    <!-- Favorite recipes will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
